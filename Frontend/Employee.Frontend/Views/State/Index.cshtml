@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Employee.Frontend.Models.State>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="AddOrEdit">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryId)
+            </td>
+          @*  <td>
+               @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+                <td>
+
+                    <a class="btn btn-success" href="State/AddOrEdit/@item.Id"> Edit </a>
+                    <a class="btn btn-danger" href="State/Delete/@item.Id" onclick="return confirm('Are you sure you want to delete')">Delete</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

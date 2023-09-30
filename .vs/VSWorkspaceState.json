@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Employee.BackEnd",
+    "\\Employee.BackEnd\\Properties",
+    "\\Employee.Core",
+    "\\Employee.IoC.Configuration",
+    "\\Employee.Model",
+    "\\Employee.Repository",
+    "\\Employee.Service.Model",
+    "\\Employee.Shared"
+  ],
+  "SelectedNode": "\\Employee.Core\\bin",
+  "PreviewInSolutionExplorer": false
+}
