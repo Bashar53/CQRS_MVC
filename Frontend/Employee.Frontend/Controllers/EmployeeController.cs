@@ -1,5 +1,6 @@
 ﻿using Employee.Frontend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 
 namespace Employee.Frontend.Controllers;
@@ -51,13 +52,33 @@ public class EmployeeController : Controller
     [AutoValidateAntiforgeryToken]
     public async Task<IActionResult> AddOrEdit(int Id)
     {
+
+        var response = await _httpClient.GetAsync("Country");
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+            var countryList = JsonConvert.DeserializeObject<List<Country>>(content);
+            ViewData["countryId"] = new SelectList(countryList, "Id", "CountryName");
+        }
+        var response2 = await _httpClient.GetAsync("State");
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response2.Content.ReadAsStringAsync();
+            var countryList = JsonConvert.DeserializeObject<List<State>>(content);
+            ViewData["stateId"] = new SelectList(countryList, "Id", "StateName");
+
+        }
+
         if (Id == 0)
         {
+            //create form
             return View(new Employees());
 
         }
         else
         {
+
+            //update get By Id
             var data = await _httpClient.GetAsync($"Employee/{Id}");
 
             if (data.IsSuccessStatusCode)
@@ -104,8 +125,61 @@ public class EmployeeController : Controller
 
         }
 
+        return View(new Employees());
 
     }
+
+    public async Task<IActionResult> Delete(int Id)
+    {
+        var data = await _httpClient.DeleteAsync($"Employee/{Id}");
+
+        if (data.IsSuccessStatusCode)
+        {
+            return RedirectToAction("Index");
+        }
+
+        else
+        {
+            return NotFound();
+        }
+    }
+
+
+    //[AutoValidateAntiforgeryToken]
+    //[HttpPost]
+
+    //public async Task<IActionResult> AddOrEdit(int Id, Employees employee)
+    //{
+    //    if (ModelState.IsValid)
+    //    {
+    //        if (Id == 0)
+    //        {
+
+    //            var result = await _httpClient.PostAsJsonAsync("Employee", employee);
+    //            if (result.IsSuccessStatusCode)
+    //            {
+    //                return RedirectToAction("Index");
+    //            }
+    //        }
+
+    //        else
+
+    //        {
+    //            var result = await _httpClient.PutAsJsonAsync($"Employee/{Id}", employee);
+
+    //            if (result.IsSuccessStatusCode)
+    //            {
+    //                return RedirectToAction("Index");
+
+    //            }
+
+
+    //        }
+
+    //    }
+
+
+    //}
 
 }
 

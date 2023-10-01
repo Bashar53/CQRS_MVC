@@ -190,3 +190,10 @@ D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\obj\Debug\net7.
 D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\obj\Debug\net7.0\Employee.BackEnd.csproj.CopyComplete
 D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\obj\Debug\net7.0\Employee.BackEnd.genruntimeconfig.cache
 D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\obj\Debug\net7.0\ref\Employee.BackEnd.dll
+D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
+D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\bin\Debug\net7.0\Swashbuckle.AspNetCore.Newtonsoft.dll
+D:\ASP.Net\Clean Architecture\employee\employee\Employee.BackEnd\bin\Debug\net7.0\Swashbuckle.AspNetCore.ReDoc.dll
